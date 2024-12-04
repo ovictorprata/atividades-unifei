@@ -1,7 +1,9 @@
 import sqlite3
+import os
 
-# Conexão com o banco de dados SQLite
-conn = sqlite3.connect('gestao_financeira.db')
+current_directory = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.join(current_directory, 'gestao_financeira.db')
+conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
 # 1. Criar as tabelas
