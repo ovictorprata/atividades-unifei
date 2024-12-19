@@ -1,7 +1,11 @@
 import sqlite3
+import os
 
-conn = sqlite3.connect('gestao_tarefas.db')
+current_directory = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.join(current_directory, 'gestao_tarefas.db')
+conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
+
 
 # Criar as tabelas
 cursor.execute('''CREATE TABLE IF NOT EXISTS Usuario (
